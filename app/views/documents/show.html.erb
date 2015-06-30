@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>File type:</strong>
+  <%= @document.file_type %>
+</p>
+
+<% @document_pages.each do |p| %>
+  <%= image_tag(p.image_url, size: "100x100") %>
+  <%= link_to "Edit Attachment", edit_document_page_path(p) %>
+<% end %>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
