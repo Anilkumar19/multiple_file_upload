@@ -27,7 +27,6 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(document_params)
-
     respond_to do |format|
       if @document.save
         params[:document_pages]['image'].each do |a|
